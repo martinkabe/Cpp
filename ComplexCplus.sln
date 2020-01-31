@@ -123,7 +123,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OperatorOverloadingChalleng
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inheritance", "Inheritance", "{7BBF0F4D-4831-471E-BF64-699D246F5BB9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InheritanceVsComposition", "InheritanceVsComposition\InheritanceVsComposition.vcxproj", "{4E147AE9-03B4-4132-877F-DE9BB70E71E9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatrixOperations", "InheritanceVsComposition\InheritanceVsComposition.vcxproj", "{4E147AE9-03B4-4132-877F-DE9BB70E71E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MatrixOperations", "MatrixOperations", "{4C3DE40D-7EAB-499D-9B4F-8B6BA8F62CFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -618,7 +620,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{4E147AE9-03B4-4132-877F-DE9BB70E71E9} = {7BBF0F4D-4831-471E-BF64-699D246F5BB9}
+		{4E147AE9-03B4-4132-877F-DE9BB70E71E9} = {4C3DE40D-7EAB-499D-9B4F-8B6BA8F62CFF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F8E60EE-D029-4B2B-AD80-C30DD9A2266A}
