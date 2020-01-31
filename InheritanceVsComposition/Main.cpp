@@ -27,7 +27,6 @@ int main()
 		cout << "\nAn exception has been thrown:\n" << ex.what() << endl;
 	}
 	
-
 	/*
 	Matrix empty;
 	empty = test1 * test1 * test1;
