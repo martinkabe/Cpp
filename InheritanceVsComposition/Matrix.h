@@ -1,6 +1,6 @@
 #pragma once
-#ifndef __INHERITANCE__
-#define __INHERITANCE__
+#ifndef __MATRIXOPERATIONS__
+#define __MATRIXOPERATIONS__
 
 class Matrix
 {
@@ -27,4 +27,4 @@ private:
 	
 };
 
-#endif // !__INHERITANCE__
+#endif // !__MATRIXOPERATIONS__
