@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\InheritanceVsComposition\Main.cpp">
+    <ClCompile Include="C:\Users\Martin\Downloads\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\InheritanceVsComposition\Matrix.cpp">
+    <ClCompile Include="C:\Users\Martin\Downloads\Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\InheritanceVsComposition\Matrix.h">
+    <ClInclude Include="Matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

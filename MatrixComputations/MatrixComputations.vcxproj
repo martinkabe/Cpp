@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{310B773F-8726-4E06-BE04-C7813BC50B04}</ProjectGuid>
+    <ProjectGuid>{CA692477-2E01-4941-B43C-C26B9F5D4A83}</ProjectGuid>
     <RootNamespace>MatrixComputations</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -123,11 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\InheritanceVsComposition\Main.cpp" />
-    <ClCompile Include="..\InheritanceVsComposition\Matrix.cpp" />
+    <ClCompile Include="C:\Users\Martin\Downloads\Main.cpp" />
+    <ClCompile Include="C:\Users\Martin\Downloads\Matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\InheritanceVsComposition\Matrix.h" />
+    <ClInclude Include="Matrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
