@@ -47,16 +47,22 @@ Matrix::Matrix(int r, int c)
 // destructor
 Matrix::~Matrix()
 {
-	cout << "Destructor for test class called" << endl;
+	cout << "Destructor for Matrix class called" << endl;
 	// clean up
 	delete[] mat;
 }
 
 // move constructor
 Matrix::Matrix(Matrix &&source)
-	: rows{ source.rows }, cols{ source.cols }, mat{source.mat}
 {
+	rows = source.rows;
+	cols = source.cols;
+	mat = source.mat;
+	
 	source.mat = nullptr;
+	source.rows = 0;
+	source.cols = 0;
+
 	std::cout << "Move constructor used!" << std::endl;
 }
 
@@ -74,26 +80,23 @@ Matrix & Matrix::operator=(Matrix && rhs)
 	mat = rhs.mat;
 
 	rhs.mat = nullptr;
+	rhs.rows = 0;
+	rhs.cols = 0;
 
 	return *this;
 }
 
 // copy constructor
-Matrix::Matrix(const Matrix & source)
-	: mat{nullptr}
+Matrix::Matrix(const Matrix& source)
 {
+	mat = new int[source.rows * source.cols];
+	std::copy(source.mat, source.mat + source.rows * source.cols, mat);
 	rows = source.rows;
 	cols = source.cols;
-	mat = new int[source.rows * source.cols];
-	for (size_t i = 0; i < source.rows; i++)
-	{
-		for (size_t j = 0; j < source.cols; j++)
-			mat[i*source.cols + j] = source.mat[i*source.cols + j];
-	}
 }
 
 // copy assignment - deep copy
-Matrix & Matrix::operator=(const Matrix & rhs)
+Matrix &Matrix::operator=(const Matrix &rhs)
 {
 	cout << "Copy assignment" << endl;
 	if (this == &rhs)
@@ -101,15 +104,11 @@ Matrix & Matrix::operator=(const Matrix & rhs)
 
 	delete[] this->mat;
 	
+	mat = new int[rhs.rows * rhs.cols];
+	std::copy(rhs.mat, rhs.mat + rhs.rows * rhs.cols, mat);
+
 	rows = rhs.rows;
 	cols = rhs.cols;
-	mat = new int[rhs.rows * rhs.cols];
-
-	for (size_t i = 0; i < rhs.rows; i++)
-	{
-		for (size_t j = 0; j < rhs.cols; j++)
-			mat[i*rhs.cols + j] = rhs.mat[i*rhs.cols + j];
-	}
 
 	return *this;
 }
@@ -117,7 +116,9 @@ Matrix & Matrix::operator=(const Matrix & rhs)
 Matrix Matrix::operator*(const Matrix &rhs) const
 {
 	// check if multiplication is possible
-	
+	if (this->cols != rhs.rows)
+		throw std::invalid_argument("#cols in first matrix must be the same like #rows in the second one!");
+
 	int *buff = new int[rhs.rows * rhs.cols];
 	for (int i = 0; i < rows; i++)
 	{
