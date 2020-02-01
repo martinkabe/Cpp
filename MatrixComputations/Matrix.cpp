@@ -116,10 +116,10 @@ Matrix &Matrix::operator=(const Matrix &rhs)
 Matrix Matrix::operator*(const Matrix &rhs) const
 {
 	// check if multiplication is possible
-	if (this->cols != rhs.rows)
+	if (cols != rhs.rows)
 		throw std::invalid_argument("#cols in first matrix must be the same like #rows in the second one!");
 
-	int *buff = new int[rhs.rows * rhs.cols];
+	int *buff = new int[rows * rhs.cols];
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < rhs.cols; j++)
@@ -129,10 +129,10 @@ Matrix Matrix::operator*(const Matrix &rhs) const
 			{
 				sum = sum + mat[i * cols + k] * rhs.mat[k * rhs.cols + j];
 			}
-			buff[i * cols + j] = sum;
+			buff[i * rhs.cols + j] = sum;
 		}
 	}
-	Matrix temp{ rows, cols, buff };
+	Matrix temp{ rows, rhs.cols, buff };
 	delete[] buff;
 	return temp;
 }

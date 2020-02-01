@@ -15,12 +15,19 @@ int main()
 
 	try
 	{
-		int arr1[]{ 1,2,3,4,5,6 };
-		int arr2[]{ 1,2,3,4 };
+		int arr1[]{ 1, 2, 3, 4, 5, 6 };
+		int arr2[]{ 1, 2, 3, 4, 5, 6 };
+		int arr3[]{ 1, 2, 3 };
+
 		Matrix test1{ 2, 3, arr1 };
-		Matrix test2{ 2, 2, arr1 };
-		Matrix empty = test1 * test2;
-		cout << empty << endl;
+		Matrix test2{ 3, 2, arr2};
+		Matrix test3{ 3, 1, arr3 };
+
+		Matrix empty1 = test1 * test2;
+		cout << empty1 << endl;
+		Matrix empty2 = test1 * test3;
+		cout << empty2 << endl;
+
 	}
 	catch (const std::invalid_argument& ex)
 	{
